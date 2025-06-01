@@ -1,0 +1,78 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Looping Apology</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f5d0fe, #fde2e4);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }h1 {
+  color: #9d174d;
+}
+
+#messageContainer {
+  margin-top: 30px;
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 10px;
+  width: 300px;
+  background: #fff0f3;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+}
+
+.sorry-text {
+  color: #b91c1c;
+  font-size: 1.2rem;
+  margin: 5px 0;
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #f43f5e;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #be123c;
+  transform: scale(1.05);
+}
+
+  </style>
+</head>
+<body>  <h1>penguin🥺</h1>
+  <button onclick="startLoop()">click koro baby</button>
+  <div id="messageContainer"></div>  <script>
+    function startLoop() {
+      const container = document.getElementById('messageContainer');
+      const msg = document.createElement('div');
+      msg.className = 'sorry-text';
+      msg.textContent = 'I am so sorry baby 😔';
+      container.appendChild(msg);
+
+      // Continue appending every 500ms
+      setInterval(() => {
+        const msg = document.createElement('div');
+        msg.className = 'sorry-text';
+        msg.textContent = 'I am so sorry baby 😔';
+        container.appendChild(msg);
+        container.scrollTop = container.scrollHeight;
+      }, 500);
+    }
+  </script></body>
+</html>
